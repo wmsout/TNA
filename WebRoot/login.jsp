@@ -58,6 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div>
 							<!-- 用户名的input -->
 							<input class = "input-account" type = "text"  name = "account" placeholder = "用户名">
+							&nbsp;&nbsp;&nbsp;&nbsp; ${requestScope.error1}
 							
 						</div>
 						
@@ -65,6 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div>
 						<!-- 密码的input -->
 							<input class = "input-account" type = "password" name = "password" placeholder = "密码">
+							&nbsp;&nbsp;&nbsp;&nbsp; ${requestScope.error2}
 						</div>
 					</div>
 					

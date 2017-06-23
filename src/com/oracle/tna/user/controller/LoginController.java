@@ -22,8 +22,19 @@ public class LoginController {
     	
     	User user;
     	user = login.getUser(account);
-    	model.addAttribute("password",user.getPassword());
-        return "form2";
+    	if(user == null){
+    		model.addAttribute("error1", "用户不存在");
+    		return "login";
+    	}//if 查不到用户
+    	else if(!user.getPassword().equals(password)){
+    		model.addAttribute("error2", "密码错误");
+    		return "login";
+    	}//密码错误
+    	else{
+    		model.addAttribute("password",user.getPassword());
+    		return "form2";
+    	}//登录成功
+    	
+        
         }
 }
-
